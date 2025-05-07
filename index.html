@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna</title>
+    <style>
+        /* Resetowanie marginesów i paddingu */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ogólne style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff; /* Jasne tło */
+            color: #222;            /* Ciemny tekst */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        /* Tryb ciemny */
+        body.dark-mode {
+            background-color: #121212; /* Ciemne tło */
+            color: #e1e1e1;            /* Jasny tekst */
+        }
+
+        /* Nagłówek */
+        header {
+            background-color: #f0f0f0; /* Jasny nagłówek */
+            color: #222;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        header h1 {
+            color: #000;
+        }
+
+        header.dark-mode {
+            background-color: #000; /* Ciemny nagłówek */
+        }
+
+        /* Nawigacja */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd; /* Jasna nawigacja */
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            color: white;
+        }
+
+        nav.dark-mode {
+            background-color: #111; /* Ciemna nawigacja */
+        }
+
+        /* Sekcja z treścią */
+        section {
+            flex: 1;
+            padding: 40px;
+            margin: 20px auto;
+            background-color: #f9f9f9; /* Jasne tło sekcji */
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        section.dark-mode {
+            background-color: #333; /* Ciemne tło sekcji */
+            color: #e1e1e1;          /* Jasny tekst w ciemnym trybie */
+        }
+
+        section h2, section p, section ul {
+            margin-bottom: 20px;
+        }
+
+        section ul {
+            list-style-type: none;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0; /* Jasna stopka */
+            color: #222;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        footer.dark-mode {
+            background-color: #000; /* Ciemna stopka */
+            color: #fff;
+        }
+
+        /* Przycisk przełączania trybu */
+        .dark-mode-toggle {
+            background-color: #16a085;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Animacja przełączania trybu */
+        .dark-mode-toggle:focus {
+            outline: none;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 12px;
+            }
+
+            section {
+                padding: 25px;
+            }
+        }
+
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Strona o zainteresowaniach</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="podstrona1.html">Programowanie w JavaScript</a>
+    <a href="podstrona2.html">Tworzenie Stron Internetowych</a>
+</nav>
+
+<section>
+    <h2>O moich zainteresowaniach</h2>
+    <p>Jestem programistą, który specjalizuje się w tworzeniu aplikacji webowych i mobilnych. Moje zainteresowania obejmują szeroką gamę technologii – od frontendowych frameworków takich jak React, po backend w Node.js. Lubię podejmować wyzwania i tworzę projekty, które angażują zarówno moje umiejętności techniczne, jak i kreatywność. W mojej pracy staram się łączyć technologię z estetyką, tworząc projekty, które nie tylko działają, ale także przyciągają użytkowników swoją funkcjonalnością i designem.</p>
+
+    <p>W codziennej pracy korzystam z nowoczesnych narzędzi i technologii, które pomagają mi w szybkim rozwiązywaniu problemów oraz automatyzowaniu wielu procesów. Współpraca z innymi programistami i tworzenie aplikacji zespołowych daje mi satysfakcję, ponieważ wierzę, że wspólna praca jest kluczem do tworzenia lepszych produktów.</p>
+
+    <p>W ramach swoich pasji do nowych technologii, zafascynowany jestem sztuczną inteligencją, analizą danych i uczeniem maszynowym. Uważam, że te dziedziny mają ogromny potencjał, aby zrewolucjonizować wiele aspektów naszego życia i pracy. W najbliższej przyszłości chciałbym podjąć głębsze kroki w kierunku nauki o danych oraz sztucznej inteligencji, w tym również rozwijać aplikacje oparte na algorytmach ML.</p>
+
+    <h3>Moje umiejętności:</h3>
+    <ul>
+        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+        <li>React.js, Vue.js, Angular</li>
+        <li>Node.js, Express.js</li>
+        <li>Python, Django, Flask</li>
+        <li>SQL, MongoDB, Firebase</li>
+        <li>Git, Docker, Kubernetes</li>
+        <li>GraphQL, REST API</li>
+    </ul>
+
+    <h3>Projekty, które zrobiłem:</h3>
+    <p>W ciągu swojej kariery stworzyłem wiele aplikacji webowych i mobilnych, które pomagają użytkownikom w rozwiązywaniu codziennych problemów. Projekty, które realizuję, obejmują takie dziedziny jak zarządzanie czasem, automatyzacja procesów w firmach, aplikacje wspierające edukację online i wiele innych. Każdy projekt traktuję indywidualnie i dostosowuję do specyficznych potrzeb użytkowników.</p>
+
+    <h3>Plany na przyszłość:</h3>
+    <p>Moim celem na przyszłość jest dalszy rozwój w dziedzinie sztucznej inteligencji oraz pracy z dużymi zbiorami danych. Chcę tworzyć innowacyjne rozwiązania, które będą mogły usprawnić różne sektory życia codziennego, a także dążyć do rozwoju jako lider technologiczny w branży. Moim marzeniem jest stworzenie startupu technologicznego, który pomoże rozwiązać realne problemy społeczne, wykorzystując technologie takie jak AI czy blockchain.</p>
+
+    <h3>Dlaczego warto pracować ze mną?</h3>
+    <p>Jestem osobą, która nie boi się wyzwań. Zawsze staram się dostarczać projekty na czas, zachowując wysoką jakość kodu. Moja pasja do technologii sprawia, że jestem zawsze gotowy do nauki i adaptacji do nowych narzędzi i języków programowania. Ponadto potrafię efektywnie współpracować z innymi członkami zespołu, co pozwala mi realizować większe projekty w sposób uporządkowany i efektywny.</p>
+</section>
+
+<section>
+    <h3>Filmik:</h3>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wszzsDAuI1E" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <h3>Galeria zdjęć z projektów:</h3>
+    <div class="gallery">
+        <img src="p1.jpg" alt="Projekt 1">
+        <img src="p2.jpg" alt="Projekt 2">
+        <img src="p3.jpg" alt="Projekt 3">
+        <img src="p4.jpg" alt="Projekt 4">
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Moje Zainteresowania – Programowanie | Wszystkie prawa zastrzeżone</p>
+</footer>
+
+<!-- Przycisk przełączania trybu -->
+<button class="dark-mode-toggle" id="toggleButton">Przełącz Tryb</button>
+
+<script>
+    // Funkcja przełączająca tryb ciemny
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sprawdzamy preferencje trybu z localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('header').classList.add('dark-mode');
+            document.querySelector('nav').classList.add('dark-mode');
+            document.querySelector('footer').classList.add('dark-mode');
+            document.querySelectorAll('section').forEach(function (section) {
+                section.classList.add('dark-mode');
+            });
+        }
+
+        // Funkcja przełączająca tryb ciemny
+        document.getElementById('toggleButton').addEventListener('click', function () {
+            // Przełączanie trybu dla wszystkich sekcji
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('header').classList.toggle('dark-mode');
+            document.querySelector('nav').classList.toggle('dark-mode');
+            document.querySelector('footer').classList.toggle('dark-mode');
+            
+            // Dodanie klasy dla wszystkich sekcji
+            document.querySelectorAll('section').forEach(function (section) {
+                section.classList.toggle('dark-mode');
+            });
+
+            // Zapisujemy preferencje w localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

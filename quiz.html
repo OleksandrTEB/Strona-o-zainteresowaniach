@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz o Programowaniu</title>
+  <style>
+    /* Styl ogólny strony */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4; /* Tło strony */
+      color: #333; /* Kolor tekstu */
+      margin: 0; /* Usunięcie marginesu */
+      padding: 0; /* Usunięcie paddingu */
+      transition: background-color 0.3s, color 0.3s; /* Płynna zmiana koloru tła i tekstu */
+    }
+
+    /* Tryb ciemny */
+    body.dark-mode {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+    }
+
+    /* Nagłówek strony */
+    header {
+      background-color: #34495e; /* Kolor tła nagłówka */
+      color: white; /* Kolor tekstu */
+      padding: 30px; /* Padding wewnętrzny */
+      text-align: center; /* Wyrównanie tekstu do środka */
+      font-size: 2em; /* Rozmiar czcionki nagłówka */
+      letter-spacing: 1px; /* Rozstawienie liter */
+    }
+
+    /* Tryb ciemny - nagłówek */
+    header.dark-mode {
+      background-color: #1a252f;
+    }
+
+    /* Nawigacja */
+    nav {
+      background-color: #3498db;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tryb ciemny - nawigacja */
+    nav.dark-mode {
+      background-color: #2980b9;
+    }
+
+    /* Sekcja zawierająca treść quizu */
+    section {
+      margin: auto; /* Wyrównanie sekcji do środka */
+      padding: 40px; /* Padding wewnętrzny */
+      background-color: white; /* Kolor tła sekcji */
+      border-radius: 8px; /* Zaokrąglone rogi */
+      transition: background-color 0.3s, color 0.3s; /* Płynna zmiana kolorów */
+    }
+
+    /* Tryb ciemny - sekcja */
+    section.dark-mode {
+      background-color: #34495e;
+      color: #ecf0f1;
+    }
+
+    /* Nagłówki pytań quizu */
+    h2 {
+      color: #3498db; /* Kolor nagłówka */
+      margin-bottom: 15px; /* Odstęp od dolnej krawędzi */
+    }
+
+    /* Styl dla każdego pytania */
+    .question {
+      margin-bottom: 20px; /* Odstęp między pytaniami */
+      font-size: 1.2em; /* Rozmiar czcionki pytania */
+    }
+
+    /* Opcje odpowiedzi */
+    .options input {
+      margin-right: 10px; /* Odstęp między opcjami odpowiedzi */
+    }
+
+    /* Styl przycisku "Zakończ quiz" */
+    .submit-btn {
+      background-color: #3498db; /* Kolor tła przycisku */
+      color: white; /* Kolor tekstu */
+      padding: 15px 30px; /* Padding wewnętrzny */
+      font-size: 1.2em; /* Rozmiar czcionki */
+      border-radius: 8px; /* Zaokrąglone rogi przycisku */
+      cursor: pointer; /* Zmiana kursora na wskaźnik */
+      display: block; /* Przyciski zajmują całą szerokość */
+      width: 100%; /* Szerokość przycisku */
+      margin-top: 30px; /* Odstęp od górnej krawędzi */
+    }
+
+    /* Efekt na przycisk po najechaniu */
+    .submit-btn:hover {
+      background-color: #2980b9; /* Zmiana koloru tła po najechaniu */
+    }
+
+    /* Styl stopki strony */
+    footer {
+      text-align: center; /* Wyrównanie tekstu do środka */
+      padding: 10px; /* Padding wewnętrzny */
+      background-color: #34495e; /* Kolor tła stopki */
+      color: white; /* Kolor tekstu */
+    }
+
+    /* Tryb ciemny - stopka */
+    footer.dark-mode {
+      background-color: #1a252f;
+    }
+
+    /* Styl wyników quizu */
+    .result {
+      font-size: 1.5em; /* Rozmiar czcionki dla wyników */
+      color: #27ae60; /* Kolor tekstu wyników */
+      margin-top: 20px; /* Odstęp od poprzednich elementów */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Quiz o Programowaniu
+  </header>
+
+  <!-- Nawigacja -->
+  <nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="podstrona1.html">Programowanie w JavaScript</a>
+    <a href="podstrona2.html">Tworzenie Stron Internetowych</a>
+  </nav>
+
+  <section>
+    <h2>Test Wiedzy</h2>
+
+    <!-- Formularz z pytaniami i odpowiedziami -->
+    <form id="quiz-form">
+      <!-- Pytanie 1 -->
+      <div class="question">
+        <p>1. Jak nazywa się język programowania stosowany głównie do tworzenia stron internetowych?</p>
+        <div class="options">
+          <input type="radio" name="q1" value="HTML" id="q1a1"> <label for="q1a1">HTML</label><br>
+          <input type="radio" name="q1" value="Python" id="q1a2"> <label for="q1a2">Python</label><br>
+          <input type="radio" name="q1" value="Java" id="q1a3"> <label for="q1a3">Java</label><br>
+          <input type="radio" name="q1" value="C++" id="q1a4"> <label for="q1a4">C++</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 2 -->
+      <div class="question">
+        <p>2. Co oznacza skrót CSS?</p>
+        <div class="options">
+          <input type="radio" name="q2" value="Cascading Style Sheets" id="q2a1"> <label for="q2a1">Cascading Style Sheets</label><br>
+          <input type="radio" name="q2" value="Computer Software System" id="q2a2"> <label for="q2a2">Computer Software System</label><br>
+          <input type="radio" name="q2" value="Code Styling System" id="q2a3"> <label for="q2a3">Code Styling System</label><br>
+          <input type="radio" name="q2" value="Creative Style Sheet" id="q2a4"> <label for="q2a4">Creative Style Sheet</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 3 -->
+      <div class="question">
+        <p>3. Który z poniższych języków jest językiem skryptowym?</p>
+        <div class="options">
+          <input type="radio" name="q3" value="JavaScript" id="q3a1"> <label for="q3a1">JavaScript</label><br>
+          <input type="radio" name="q3" value="Java" id="q3a2"> <label for="q3a2">Java</label><br>
+          <input type="radio" name="q3" value="C#" id="q3a3"> <label for="q3a3">C#</label><br>
+          <input type="radio" name="q3" value="C++" id="q3a4"> <label for="q3a4">C++</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 4 -->
+      <div class="question">
+        <p>4. Co oznacza skrót DOM?</p>
+        <div class="options">
+          <input type="radio" name="q4" value="Document Object Model" id="q4a1"> <label for="q4a1">Document Object Model</label><br>
+          <input type="radio" name="q4" value="Document Outline Model" id="q4a2"> <label for="q4a2">Document Outline Model</label><br>
+          <input type="radio" name="q4" value="Data Object Model" id="q4a3"> <label for="q4a3">Data Object Model</label><br>
+          <input type="radio" name="q4" value="Digital Object Model" id="q4a4"> <label for="q4a4">Digital Object Model</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 5 -->
+      <div class="question">
+        <p>5. Które z poniższych narzędzi jest najczęściej używane do edycji kodu HTML?</p>
+        <div class="options">
+          <input type="radio" name="q5" value="Notepad++" id="q5a1"> <label for="q5a1">Notepad++</label><br>
+          <input type="radio" name="q5" value="Microsoft Word" id="q5a2"> <label for="q5a2">Microsoft Word</label><br>
+          <input type="radio" name="q5" value="Photoshop" id="q5a3"> <label for="q5a3">Photoshop</label><br>
+          <input type="radio" name="q5" value="Excel" id="q5a4"> <label for="q5a4">Excel</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 6 -->
+      <div class="question">
+        <p>6. Jakie rozszerzenie mają pliki CSS?</p>
+        <div class="options">
+          <input type="radio" name="q6" value=".css" id="q6a1"> <label for="q6a1">.css</label><br>
+          <input type="radio" name="q6" value=".html" id="q6a2"> <label for="q6a2">.html</label><br>
+          <input type="radio" name="q6" value=".js" id="q6a3"> <label for="q6a3">.js</label><br>
+          <input type="radio" name="q6" value=".php" id="q6a4"> <label for="q6a4">.php</label><br>
+        </div>
+      </div>
+
+      <!-- Pytanie 7 -->
+      <div class="question">
+        <p>7. Jakie jest główne zastosowanie języka Python?</p>
+        <div class="options">
+          <input type="radio" name="q7" value="Analiza danych" id="q7a1"> <label for="q7a1">Analiza danych</label><br>
+          <input type="radio" name="q7" value="Tworzenie stron internetowych" id="q7a2"> <label for="q7a2">Tworzenie stron internetowych</label><br>
+          <input type="radio" name="q7" value="Tworzenie gier" id="q7a3"> <label for="q7a3">Tworzenie gier</label><br>
+          <input type="radio" name="q7" value="Tworzenie aplikacji mobilnych" id="q7a4"> <label for="q7a4">Tworzenie aplikacji mobilnych</label><br>
+        </div>
+      </div>
+
+      <!-- Przycisk do zakończenia quizu -->
+      <button type="button" class="submit-btn" onclick="calculateResult()">Zakończ quiz</button>
+    </form>
+
+    <!-- Wyświetlanie wyniku -->
+    <div class="result" id="result"></div>
+
+    <!-- Przycisk do przełączania trybu -->
+    <button type="button" onclick="toggleDarkMode()" class="submit-btn">Przełącz Tryb</button>
+
+    <!-- Stopka strony -->
+    <footer>
+      <p>© 2025 Moje Zainteresowania – Programowanie | Wszystkie prawa zastrzeżone</p>
+    </footer>
+  </section>
+
+  <script>
+    // Funkcja obliczająca wynik quizu
+    function calculateResult() {
+      const answers = {
+        q1: 'HTML',
+        q2: 'Cascading Style Sheets',
+        q3: 'JavaScript',
+        q4: 'Document Object Model',
+        q5: 'Notepad++',
+        q6: '.css',
+        q7: 'Analiza danych',
+      };
+  
+      let score = 0;
+  
+      for (let question in answers) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        if (selected && selected.value === answers[question]) {
+          score++;
+        }
+      }
+  
+      const result = document.getElementById('result');
+      result.textContent = `Twój wynik: ${score} na 7`;
+    }
+
+    // Załadowanie ustawienia trybu ciemnego z pamięci
+    window.onload = () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+          toggleDarkMode();
+      }
+    }
+
+    // Funkcja do przełączania trybu ciemnego
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('header').classList.toggle('dark-mode');
+      document.querySelector('section').classList.toggle('dark-mode');
+      document.querySelector('footer').classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+    }
+  </script>
+</body>
+</html>

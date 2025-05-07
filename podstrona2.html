@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temat 2 - Tworzenie Stron Internetowych</title>
+    <style>
+        /* Podstawowe style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c3e50;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+        }
+
+        section {
+            padding: 50px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e;
+            color: white;
+        }
+
+        /* Ciemny tryb */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        header.dark-mode {
+            background-color: #1abc9c;
+        }
+
+        section.dark-mode {
+            background-color: #34495e;
+        }
+
+        footer.dark-mode {
+            background-color: #1abc9c;
+        }
+
+        /* Przycisk przełączania trybu */
+        .toggle-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 20px;
+        }
+
+        .toggle-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Podstrona Tematyczna 2: Tworzenie Stron Internetowych</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="podstrona1.html">Programowanie w JavaScript</a>
+    <a href="podstrona2.html">Tworzenie Stron Internetowych</a>
+</nav>
+
+<section>
+    <h2>Wprowadzenie do HTML i CSS</h2>
+    <p>Tworzenie stron internetowych to proces, który obejmuje różne technologie. Najważniejsze z nich to HTML (Hypertext Markup Language) i CSS (Cascading Style Sheets), które razem pozwalają na stworzenie struktury i wyglądu strony internetowej.</p>
+
+    <h3>Przykład struktury HTML:</h3>
+    <pre>
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Moja Strona&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Witaj na mojej stronie!&lt;/h1&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+
+    <h3>Przykład stylizacji CSS:</h3>
+    <pre>
+        <code>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+            }
+            h1 {
+                color: #3498db;
+            }
+        </code>
+    </pre>
+
+    <!-- Przycisk do przełączania trybu -->
+    <button class="toggle-btn" onclick="toggleDarkMode()">Przełącz Tryb</button>
+</section>
+
+<footer>
+    <p>© 2025 Moje Zainteresowania – Programowanie | Wszystkie prawa zastrzeżone</p>
+</footer>
+
+<script>
+    // Funkcja do przełączania trybu ciemnego/jasnego
+    function toggleDarkMode() {
+        const body = document.body;
+        const header = document.querySelector('header');
+        const section = document.querySelector('section');
+        const footer = document.querySelector('footer');
+
+        body.classList.toggle('dark-mode');
+        header.classList.toggle('dark-mode');
+        section.classList.toggle('dark-mode');
+        footer.classList.toggle('dark-mode');
+    }
+</script>
+
+</body>
+</html>

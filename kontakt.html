@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <style>
+        /* Resetowanie marginesów i paddingu */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ogólne style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Jasne tło */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        /* Tryb ciemny */
+        body.dark-mode {
+            background-color: #121212; /* Ciemne tło */
+            color: #e1e1e1;            /* Jasny tekst */
+        }
+
+        /* Nagłówek */
+        header {
+            background-color: #34495e; /* Jasny nagłówek */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        header.dark-mode {
+            background-color: #1a232a; /* Ciemny nagłówek */
+        }
+
+        /* Nawigacja */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2c3e50; /* Jasna nawigacja */
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+        }
+
+        nav.dark-mode {
+            background-color: #1a232a; /* Ciemna nawigacja */
+        }
+
+        /* Sekcja */
+        section {
+            padding: 50px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        section.dark-mode {
+            background-color: #333; /* Ciemne tło sekcji */
+            color: #e1e1e1;          /* Jasny tekst w ciemnym trybie */
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #34495e; /* Jasna stopka */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        footer.dark-mode {
+            background-color: #1a232a; /* Ciemna stopka */
+        }
+
+        /* Formularz */
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        form input, form textarea {
+            background-color: white; /* Jasne tło */
+        }
+
+        form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #2980b9;
+        }
+
+        form input.dark-mode, form textarea.dark-mode {
+            background-color: #444; /* Ciemne tło */
+            color: #e1e1e1;          /* Jasny tekst */
+        }
+
+        /* Przycisk przełączania trybu */
+        .dark-mode-toggle {
+            background-color: #16a085;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kontakt</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="podstrona1.html">Programowanie w JavaScript</a>
+    <a href="podstrona2.html">Tworzenie Stron Internetowych</a>
+</nav>
+
+<section>
+    <h2>Formularz kontaktowy</h2>
+    <form id="contact-form">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Wyślij</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Moje Zainteresowania – Programowanie | Wszystkie prawa zastrzeżone</p>
+</footer>
+
+<!-- Przycisk przełączania trybu -->
+<button class="dark-mode-toggle" id="toggleButton">Przełącz Tryb</button>
+
+<script>
+    // Funkcja przełączająca tryb ciemny
+    document.getElementById('toggleButton').addEventListener('click', function () {
+        // Przełączanie trybu dla wszystkich sekcji
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('dark-mode');
+        document.querySelector('nav').classList.toggle('dark-mode');
+        document.querySelector('footer').classList.toggle('dark-mode');
+        document.querySelector('form').classList.toggle('dark-mode');
+        document.querySelectorAll('form input, form textarea').forEach(function (element) {
+            element.classList.toggle('dark-mode');
+        });
+
+        // Zapisanie stanu trybu ciemnego w localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+
+    // Sprawdzenie preferencji trybu ciemnego w localStorage
+    window.addEventListener('DOMContentLoaded', (event) => {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('header').classList.add('dark-mode');
+            document.querySelector('nav').classList.add('dark-mode');
+            document.querySelector('footer').classList.add('dark-mode');
+            document.querySelectorAll('form input, form textarea').forEach(function (element) {
+                element.classList.add('dark-mode');
+            });
+        }
+    });
+
+    // Obsługa formularza kontaktowego
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Pobranie wartości z pól formularza
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Prosta walidacja
+        if (name === '' || email === '' || message === '') {
+            alert("Wszystkie pola muszą być wypełnione.");
+            return;
+        }
+
+        // Walidacja e-maila przy użyciu prostego regexu
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Podaj poprawny adres e-mail.");
+            return;
+        }
+
+        // Jeśli wszystko jest OK
+        alert("Formularz został wysłany!");
+        // Można dodać reset formularza
+        document.getElementById('contact-form').reset();
+    });
+</script>
+
+</body>
+</html>
